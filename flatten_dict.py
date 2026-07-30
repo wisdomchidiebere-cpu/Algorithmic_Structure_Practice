@@ -8,7 +8,7 @@
 #→ {"a": 1, "b.c": 2, "b.d.e": 3}
 
 def flatten_dict(obj, parent_key = "", my_obj = None):
-	if my_obj:
+	if my_obj == None:
 		my_obj = {}
 	
 	separator = "."
@@ -19,7 +19,7 @@ def flatten_dict(obj, parent_key = "", my_obj = None):
 		else:
 			new_key = key
 		if isinstance(value, dict):
-			flatten_dict(value, new_key)
+			flatten_dict(value, new_key, my_obj)
 		else:
 			my_obj[new_key] = value
 		
