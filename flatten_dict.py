@@ -7,9 +7,9 @@
    # } }})
 #→ {"a": 1, "b.c": 2, "b.d.e": 3}
 
-def flatten_dict(obj, parent_key = "", my_obj = {}):
-	if not obj:
-		return {}
+def flatten_dict(obj, parent_key = "", my_obj = None):
+	if my_obj:
+		my_obj = {}
 	
 	separator = "."
 	
